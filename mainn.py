@@ -1,7 +1,7 @@
 import random
 Main_List = ["stone", "paper", "scissors"]
 print("\nHey! Welcome to Stone, Paper and Scissors!!\n")
-print("Here is the menu you can access (Enter the number assosiated with your choice.)")
+
 l = 0
 k = open("score_swg.txt", "r")
 try:
@@ -13,9 +13,11 @@ try:
 except:
     k.close()
     f = open("score_swg.txt", "w")
-    if l == 0:
+    if l != 1:
         f.write("0")
     f.close()
+    
+print("Here is the menu you can access (Enter the number assosiated with your choice.)")
 
 while True:
     print("1) Rules\n2) Play\n3) Exit")
@@ -24,7 +26,7 @@ while True:
 
     if a == 1:
         print('Here are the rules :\n')
-        print("Com'on You already know the rules for sps ya!\n")
+        print("The rules are as follow\n in stone and scissor - stone wins\n in scissor and paper - scissor wins \n in paper and stone - paper wins!")
 
     elif a == 2:
         score = 0
@@ -68,11 +70,11 @@ while True:
                 print(f"You Won! I chose {choice}")
                 print(f"Your score is : {score}")
 
-            elif b != "s" and b != "p" and b != "sc":
-                print('Wrong input!\n')
+            else:
+                print('Wrong input!! try again\n')
                 continue
 
-            i +=1
+            i = i+1
 
         f = open("score_swg.txt", "r")
         m = int(f.read())
@@ -92,7 +94,7 @@ while True:
         break
 
     else:
-        print('Wrong Input!!')
+        print('Wrong Input!!, please try again!')
         
 
 
